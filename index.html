@@ -371,13 +371,70 @@ h2 {
 }
 
 
-/* FOTO ÚNICA */
+/* =========================================
+   FOTO ÚNICA
+========================================= */
 
 .single-photo img {
 
     width: 280px;
 
     height: 330px;
+
+}
+
+
+/* =========================================
+   FOTO 7
+   SE MUESTRA COMPLETA
+========================================= */
+
+.photo7-container {
+
+    width: 240px;
+
+    height: 280px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin: 5px 0 15px;
+
+}
+
+
+.photo7-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    border:
+        3px solid
+        rgba(255,255,255,0.8);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0,0,0,0.4);
+
+    transition:
+        0.3s;
+
+}
+
+
+.photo7-container img:hover {
+
+    transform:
+        scale(1.03);
 
 }
 
@@ -591,6 +648,15 @@ button:hover {
     }
 
 
+    .photo7-container {
+
+        width: 180px;
+
+        height: 220px;
+
+    }
+
+
     .navigation {
 
         bottom: 18px;
@@ -660,7 +726,6 @@ button:hover {
 
 <!-- =========================================
      PÁGINA 1
-     FOTO 1 + FOTO 2
 ========================================= -->
 
 <section class="page">
@@ -743,7 +808,6 @@ button:hover {
 
 <!-- =========================================
      PÁGINA 2
-     FOTO 4 + FOTO 5 + FOTO 6
 ========================================= -->
 
 <section class="page">
@@ -842,7 +906,6 @@ button:hover {
 
 <!-- =========================================
      PÁGINA 3
-     FOTO 8
 ========================================= -->
 
 <section class="page">
@@ -929,8 +992,7 @@ button:hover {
 
 
 <!-- =========================================
-     PÁGINA 4
-     FOTO 7
+     PÁGINA 4 — FOTO 7
 ========================================= -->
 
 <section class="page">
@@ -958,15 +1020,19 @@ button:hover {
 
     <h2>
 
-        Tú y yo
+        La más hermosa
 
     </h2>
 
 
-    <div class="photos single-photo">
+    <!-- FOTO 7 COMPLETA -->
+
+    <div class="photo7-container">
 
 
-        <img src="fotos/foto7.jpg">
+        <img
+            src="fotos/foto7.jpg"
+            alt="La más hermosa">
 
 
     </div>
@@ -974,17 +1040,9 @@ button:hover {
 
     <p class="letter">
 
-        Si pudiera volver al primer día
-        en que nos conocimos, volvería
-        a elegir vivir cada momento
-        contigo.
-
-    </p>
-
-
-    <p class="signature">
-
-        Porque contigo todo es especial. 💗
+        Creces rápido mi amor y cada vez estás
+        más hermosa, para mí serías la miss universo,
+        yo siempre te voy apoyar en tus sueños.
 
     </p>
 
@@ -1016,8 +1074,7 @@ button:hover {
 
 
 <!-- =========================================
-     PÁGINA 5
-     FOTO 3
+     PÁGINA 5 — FOTO 3
 ========================================= -->
 
 <section class="page">
@@ -1106,8 +1163,7 @@ button:hover {
 
 
 <!-- =========================================
-     PÁGINA 6
-     FINAL
+     PÁGINA 6 — FINAL
 ========================================= -->
 
 <section class="page">
