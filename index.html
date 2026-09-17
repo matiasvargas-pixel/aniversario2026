@@ -1,208 +1,399 @@
 ```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nuestro Primer Año ❤️</title>
 
+
 <style>
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
 body {
+
     min-height: 100vh;
-    font-family: Georgia, "Times New Roman", serif;
-    background: radial-gradient(circle at top, #4a1728, #180912 65%);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #4a1728,
+            #180912 65%
+        );
+
     color: white;
+
     overflow: hidden;
 }
 
-/* CORAZONES */
+
+/* =========================================
+   CORAZONES
+========================================= */
 
 .heart {
+
     position: fixed;
+
     bottom: -30px;
+
     font-size: 20px;
+
     opacity: 0.7;
-    animation: subir 7s linear infinite;
+
+    animation:
+        subir 7s linear infinite;
+
     pointer-events: none;
+
     z-index: 0;
 }
 
+
 @keyframes subir {
+
     0% {
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
+
         opacity: 0;
     }
+
 
     20% {
+
         opacity: 0.7;
+
     }
+
 
     100% {
-        transform: translateY(-110vh) scale(1.5);
+
+        transform:
+            translateY(-110vh)
+            scale(1.5);
+
         opacity: 0;
+
     }
+
 }
 
-/* CONTENEDOR */
+
+/* =========================================
+   CONTENEDOR
+========================================= */
 
 .app {
+
     width: 100%;
+
     height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     padding: 20px;
 }
 
+
 .book {
-    width: min(900px, 100%);
-    height: min(700px, 92vh);
+
+    width:
+        min(900px, 100%);
+
+    height:
+        min(700px, 92vh);
+
     position: relative;
+
     z-index: 1;
 }
 
-/* CARTAS */
+
+/* =========================================
+   PÁGINAS
+========================================= */
 
 .page {
+
     position: absolute;
+
     inset: 0;
+
     display: none;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
 
     padding: 45px;
 
     border-radius: 25px;
 
+
     background:
+
         linear-gradient(
             135deg,
             rgba(255,255,255,0.08),
             rgba(255,255,255,0.02)
         );
 
-    border: 1px solid rgba(255,255,255,0.15);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,0.55);
 
-    animation: aparecer 0.7s ease;
+        0 30px 80px
+        rgba(0,0,0,0.55);
+
+
+    animation:
+        aparecer
+        0.7s ease;
 }
+
 
 .page.active {
+
     display: flex;
+
 }
+
 
 @keyframes aparecer {
 
     from {
+
         opacity: 0;
-        transform: translateX(40px) scale(0.97);
+
+        transform:
+            translateX(40px)
+            scale(0.97);
+
     }
+
 
     to {
+
         opacity: 1;
-        transform: translateX(0) scale(1);
+
+        transform:
+            translateX(0)
+            scale(1);
+
     }
+
 }
 
-/* PORTADA */
+
+/* =========================================
+   PORTADA
+========================================= */
 
 .cover-heart {
+
     font-size: 80px;
-    animation: latido 1.5s infinite;
+
+    animation:
+        latido
+        1.5s infinite;
+
     margin-bottom: 20px;
+
 }
+
 
 @keyframes latido {
 
-    0%, 100% {
-        transform: scale(1);
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
     }
+
 
     50% {
-        transform: scale(1.15);
+
+        transform:
+            scale(1.15);
+
     }
+
 }
+
 
 h1 {
-    font-size: clamp(40px, 7vw, 72px);
+
+    font-size:
+        clamp(40px, 7vw, 72px);
+
     margin-bottom: 15px;
+
 }
+
 
 h2 {
-    font-size: clamp(28px, 5vw, 45px);
+
+    font-size:
+        clamp(28px, 5vw, 45px);
+
     margin-bottom: 20px;
+
 }
+
 
 .subtitle {
+
     color: #e8b8c7;
+
     font-size: 20px;
+
     margin-bottom: 35px;
+
 }
 
-/* TEXTO */
+
+/* =========================================
+   TEXTO
+========================================= */
 
 .letter {
+
     max-width: 680px;
+
     line-height: 1.8;
+
     font-size: 18px;
+
     color: #f4dfe6;
+
 }
+
 
 .signature {
+
     margin-top: 25px;
+
     font-size: 22px;
+
     font-style: italic;
+
     color: #ffb6ca;
+
 }
 
-/* FOTOS */
+
+/* =========================================
+   FOTOS
+========================================= */
 
 .photos {
+
     display: flex;
+
     gap: 15px;
+
     margin: 15px 0 25px;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
 }
 
+
 .photos img {
+
     width: 175px;
+
     height: 210px;
 
     object-fit: cover;
 
     border-radius: 18px;
 
-    border: 3px solid rgba(255,255,255,0.8);
+    border:
+        3px solid
+        rgba(255,255,255,0.8);
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,0.4);
 
-    transition: 0.3s;
+        0 12px 30px
+        rgba(0,0,0,0.4);
+
+    transition:
+        0.3s;
+
 }
+
 
 .photos img:hover {
-    transform: scale(1.05) rotate(-1deg);
+
+    transform:
+        scale(1.05)
+        rotate(-1deg);
+
 }
 
-/* BOTONES */
+
+/* FOTO ÚNICA */
+
+.single-photo img {
+
+    width: 280px;
+
+    height: 330px;
+
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
 
 button {
+
     border: none;
+
     border-radius: 50px;
 
-    padding: 14px 28px;
+    padding:
+        14px 28px;
 
     font-size: 16px;
 
@@ -214,23 +405,36 @@ button {
 
     font-weight: bold;
 
-    transition: 0.25s;
+    transition:
+        0.25s;
 
     box-shadow:
-        0 8px 25px rgba(255,111,145,0.25);
+
+        0 8px 25px
+        rgba(255,111,145,0.25);
+
 }
+
 
 button:hover {
-    transform: translateY(-2px);
-    background: #ff85a3;
+
+    transform:
+        translateY(-2px);
+
+    background:
+        #ff85a3;
+
 }
 
+
 .navigation {
+
     position: absolute;
 
     bottom: 25px;
 
     left: 0;
+
     right: 0;
 
     display: flex;
@@ -238,31 +442,47 @@ button:hover {
     justify-content: center;
 
     gap: 12px;
+
 }
+
 
 .back {
-    background: rgba(255,255,255,0.12);
+
+    background:
+        rgba(255,255,255,0.12);
+
 }
 
-/* CONTADOR */
+
+/* =========================================
+   CONTADOR
+========================================= */
 
 .counter {
+
     position: absolute;
 
     top: 20px;
+
     right: 25px;
 
     color: #dcaaba;
 
     font-size: 14px;
+
 }
 
-/* MÚSICA */
+
+/* =========================================
+   MÚSICA
+========================================= */
 
 .music {
+
     position: absolute;
 
     top: 20px;
+
     left: 25px;
 
     font-size: 13px;
@@ -274,124 +494,216 @@ button:hover {
     align-items: center;
 
     gap: 8px;
+
 }
+
 
 .music-icon {
+
     font-size: 18px;
+
 }
 
-/* FINAL */
+
+/* =========================================
+   FINAL
+========================================= */
 
 .final-heart {
+
     font-size: 100px;
+
     margin-bottom: 15px;
+
 }
+
 
 .final-text {
+
     font-size: 24px;
+
     color: #ffc1d0;
+
     margin-bottom: 20px;
+
 }
 
-/* CELULAR */
+
+/* =========================================
+   CELULAR
+========================================= */
 
 @media (max-width: 600px) {
 
     .app {
+
         padding: 10px;
+
     }
+
 
     .book {
+
         height: 95vh;
+
     }
+
 
     .page {
-        padding: 35px 20px 70px;
+
+        padding:
+            35px 20px 70px;
+
     }
+
 
     .letter {
+
         font-size: 16px;
+
     }
+
 
     .photos {
+
         gap: 8px;
+
         margin-bottom: 15px;
+
     }
+
 
     .photos img {
+
         width: 105px;
+
         height: 135px;
+
     }
+
+
+    .single-photo img {
+
+        width: 200px;
+
+        height: 250px;
+
+    }
+
 
     .navigation {
+
         bottom: 18px;
+
     }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="app">
 
 <div class="book">
 
 
-<!-- ========================================= -->
-<!-- PORTADA -->
-<!-- ========================================= -->
+<!-- =========================================
+     PORTADA
+========================================= -->
 
 <section class="page active">
 
+
     <div class="cover-heart">
+
         ❤️
+
     </div>
 
+
     <h1>
+
         Un año contigo
+
     </h1>
 
+
     <p class="subtitle">
+
         Una pequeña historia sobre nosotros
+
     </p>
+
 
     <p style="margin-bottom:30px;">
+
         Para la persona que hizo este año tan especial...
+
     </p>
 
+
     <button onclick="nextPage()">
+
         Abrir nuestra historia 💌
+
     </button>
+
 
 </section>
 
 
-<!-- ========================================= -->
-<!-- CARTA 1 -->
-<!-- ========================================= -->
+
+<!-- =========================================
+     PÁGINA 1
+     FOTO 1 + FOTO 2
+========================================= -->
 
 <section class="page">
 
+
     <div class="counter">
-        1 / 4
+
+        1 / 6
+
     </div>
+
 
     <div class="music">
-        <span class="music-icon">🎵</span>
+
+        <span class="music-icon">
+
+            🎵
+
+        </span>
+
         Nuestra primera canción
+
     </div>
 
+
     <h2>
+
         Cómo comenzó todo
+
     </h2>
+
 
     <div class="photos">
 
+
         <img src="fotos/foto1.jpg">
+
 
         <img src="fotos/foto2.jpg">
 
+
     </div>
+
 
     <p class="letter">
 
@@ -404,216 +716,507 @@ button:hover {
 
     </p>
 
+
     <p class="signature">
+
         Y aquí comenzó nuestra historia... ❤️
+
     </p>
+
 
     <div class="navigation">
 
+
         <button onclick="nextPage()">
+
             Siguiente ❤️
+
         </button>
 
+
     </div>
+
 
 </section>
 
 
-<!-- ========================================= -->
-<!-- CARTA 2 -->
-<!-- ========================================= -->
+
+<!-- =========================================
+     PÁGINA 2
+     FOTO 4 + FOTO 5 + FOTO 6
+========================================= -->
 
 <section class="page">
 
+
     <div class="counter">
-        2 / 4
+
+        2 / 6
+
     </div>
+
 
     <div class="music">
-        <span class="music-icon">🎵</span>
+
+        <span class="music-icon">
+
+            🎵
+
+        </span>
+
         Nuestra segunda canción
+
     </div>
 
+
     <h2>
+
         Nuestros momentos
+
     </h2>
+
 
     <div class="photos">
 
-        <img src="fotos/foto3.jpg">
 
         <img src="fotos/foto4.jpg">
 
+
         <img src="fotos/foto5.jpg">
 
-    </div>
-
-    <p class="letter">
-
-        En este año hemos creado recuerdos que voy
-        a guardar siempre.
-
-        Las risas, las conversaciones, los momentos
-        inesperados y hasta las pequeñas cosas que
-        quizás parecen insignificantes...
-
-        para mí tienen un significado enorme porque
-        los viví contigo.
-
-    </p>
-
-    <p class="signature">
-        Gracias por cada recuerdo. 💕
-    </p>
-
-    <div class="navigation">
-
-        <button class="back" onclick="previousPage()">
-            ← Atrás
-        </button>
-
-        <button onclick="nextPage()">
-            Siguiente ❤️
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================= -->
-<!-- CARTA 3 -->
-<!-- ========================================= -->
-
-<section class="page">
-
-    <div class="counter">
-        3 / 4
-    </div>
-
-    <div class="music">
-        <span class="music-icon">🎵</span>
-        Nuestra tercera canción
-    </div>
-
-    <h2>
-        Lo que siento por ti
-    </h2>
-
-    <div class="photos">
 
         <img src="fotos/foto6.jpg">
 
-        <img src="fotos/foto7.jpg">
 
     </div>
+
 
     <p class="letter">
 
-        Hay muchas cosas que podría decirte,
-        pero quizás ninguna palabra sea suficiente.
+        En este año hemos creado recuerdos
+        que voy a guardar siempre.
 
-        Solo quiero que sepas que me haces feliz,
-        que disfruto estar contigo y que cada día
-        contigo se convierte en un recuerdo que
-        quiero conservar.
+        Las risas, las conversaciones,
+        los momentos inesperados y hasta
+        las pequeñas cosas que quizás parecen
+        insignificantes...
+
+        para mí tienen un significado enorme
+        porque los viví contigo.
 
     </p>
+
 
     <p class="signature">
-        Te quiero muchísimo. ❤️
+
+        Gracias por cada recuerdo. 💕
+
     </p>
+
 
     <div class="navigation">
 
-        <button class="back" onclick="previousPage()">
+
+        <button
+            class="back"
+            onclick="previousPage()">
+
             ← Atrás
+
         </button>
+
 
         <button onclick="nextPage()">
+
             Siguiente ❤️
+
         </button>
 
+
     </div>
+
 
 </section>
 
 
-<!-- ========================================= -->
-<!-- CARTA FINAL -->
-<!-- ========================================= -->
+
+<!-- =========================================
+     PÁGINA 3
+     FOTO 8
+========================================= -->
 
 <section class="page">
 
+
     <div class="counter">
-        4 / 4
+
+        3 / 6
+
     </div>
+
 
     <div class="music">
-        <span class="music-icon">🎵</span>
-        Nuestra canción especial
+
+        <span class="music-icon">
+
+            🎵
+
+        </span>
+
+        Nuestra tercera canción
+
     </div>
 
-    <div class="final-heart">
-        💖
-    </div>
 
     <h2>
-        Feliz primer aniversario
+
+        Un recuerdo especial
+
     </h2>
 
-    <div class="photos">
+
+    <div class="photos single-photo">
+
 
         <img src="fotos/foto8.jpg">
 
+
     </div>
 
-    <p class="final-text">
-        Gracias por este maravilloso año.
+
+    <p class="letter">
+
+        Hay momentos que se quedan guardados
+        en nuestra memoria para siempre.
+
+        Esta fotografía es uno de esos recuerdos
+        que quiero conservar contigo.
+
     </p>
+
+
+    <p class="signature">
+
+        Un momento, una foto, un recuerdo. ❤️
+
+    </p>
+
+
+    <div class="navigation">
+
+
+        <button
+            class="back"
+            onclick="previousPage()">
+
+            ← Atrás
+
+        </button>
+
+
+        <button onclick="nextPage()">
+
+            Siguiente ❤️
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     PÁGINA 4
+     FOTO 7
+========================================= -->
+
+<section class="page">
+
+
+    <div class="counter">
+
+        4 / 6
+
+    </div>
+
+
+    <div class="music">
+
+        <span class="music-icon">
+
+            🎵
+
+        </span>
+
+        Nuestra cuarta canción
+
+    </div>
+
+
+    <h2>
+
+        Tú y yo
+
+    </h2>
+
+
+    <div class="photos single-photo">
+
+
+        <img src="fotos/foto7.jpg">
+
+
+    </div>
+
+
+    <p class="letter">
+
+        Si pudiera volver al primer día
+        en que nos conocimos, volvería
+        a elegir vivir cada momento
+        contigo.
+
+    </p>
+
+
+    <p class="signature">
+
+        Porque contigo todo es especial. 💗
+
+    </p>
+
+
+    <div class="navigation">
+
+
+        <button
+            class="back"
+            onclick="previousPage()">
+
+            ← Atrás
+
+        </button>
+
+
+        <button onclick="nextPage()">
+
+            Siguiente ❤️
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     PÁGINA 5
+     FOTO 3
+========================================= -->
+
+<section class="page">
+
+
+    <div class="counter">
+
+        5 / 6
+
+    </div>
+
+
+    <div class="music">
+
+        <span class="music-icon">
+
+            🎵
+
+        </span>
+
+        Nuestra quinta canción
+
+    </div>
+
+
+    <h2>
+
+        Todo lo que hemos vivido
+
+    </h2>
+
+
+    <div class="photos single-photo">
+
+
+        <img src="fotos/foto3.jpg">
+
+
+    </div>
+
+
+    <p class="letter">
+
+        Un año puede parecer mucho tiempo,
+        pero cuando estoy contigo siento
+        que ha pasado demasiado rápido.
+
+        Quiero que este sea solamente
+        el comienzo de muchos años más.
+
+    </p>
+
+
+    <p class="signature">
+
+        Y todavía nos quedan muchísimas
+        historias por escribir... ❤️
+
+    </p>
+
+
+    <div class="navigation">
+
+
+        <button
+            class="back"
+            onclick="previousPage()">
+
+            ← Atrás
+
+        </button>
+
+
+        <button onclick="nextPage()">
+
+            Siguiente ❤️
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     PÁGINA 6
+     FINAL
+========================================= -->
+
+<section class="page">
+
+
+    <div class="counter">
+
+        6 / 6
+
+    </div>
+
+
+    <div class="music">
+
+        <span class="music-icon">
+
+            🎵
+
+        </span>
+
+        Nuestra canción especial
+
+    </div>
+
+
+    <div class="final-heart">
+
+        💖
+
+    </div>
+
+
+    <h2>
+
+        Feliz primer aniversario
+
+    </h2>
+
+
+    <p class="final-text">
+
+        Gracias por este maravilloso año.
+
+    </p>
+
 
     <p class="letter">
 
         Este es solamente el primer capítulo
         de nuestra historia.
 
-        Espero que podamos seguir llenando muchas
-        páginas juntos, creando recuerdos,
-        viajando, riendo y compartiendo cada vez
-        más momentos.
+        Espero que podamos seguir llenando
+        muchas páginas juntos, creando recuerdos,
+        viajando, riendo y compartiendo
+        cada vez más momentos.
 
     </p>
+
 
     <p class="signature">
 
         Con todo mi amor,<br>
+
         Tu enamorado ❤️
 
     </p>
 
+
     <div class="navigation">
 
-        <button class="back" onclick="previousPage()">
+
+        <button
+            class="back"
+            onclick="previousPage()">
+
             ← Volver
+
         </button>
 
+
     </div>
+
 
 </section>
 
 
 </div>
+
 </div>
+
 
 
 <script>
 
+
+/* =========================================
+   SISTEMA DE PÁGINAS
+========================================= */
+
+
 let currentPage = 0;
 
-const pages = document.querySelectorAll(".page");
+
+const pages =
+    document.querySelectorAll(".page");
 
 
 function showPage(index) {
+
 
     pages.forEach(page => {
 
@@ -621,60 +1224,88 @@ function showPage(index) {
 
     });
 
+
     pages[index].classList.add("active");
+
 
     currentPage = index;
 
 }
 
 
+
 function nextPage() {
 
-    if (currentPage < pages.length - 1) {
 
-        showPage(currentPage + 1);
+    if (
+        currentPage <
+        pages.length - 1
+    ) {
+
+        showPage(
+            currentPage + 1
+        );
 
     }
 
 }
+
 
 
 function previousPage() {
 
-    if (currentPage > 0) {
 
-        showPage(currentPage - 1);
+    if (
+        currentPage > 0
+    ) {
+
+        showPage(
+            currentPage - 1
+        );
 
     }
 
 }
+
 
 
 /* =========================================
    CORAZONES FLOTANDO
 ========================================= */
 
+
 function createHeart() {
 
-    const heart = document.createElement("div");
+
+    const heart =
+        document.createElement("div");
+
 
     heart.classList.add("heart");
+
 
     heart.innerHTML =
         Math.random() > 0.5
         ? "❤️"
         : "💕";
 
+
     heart.style.left =
         Math.random() * 100 + "vw";
+
 
     heart.style.animationDuration =
         (5 + Math.random() * 5) + "s";
 
+
     heart.style.fontSize =
         (12 + Math.random() * 18) + "px";
 
-    document.body.appendChild(heart);
+
+    document.body.appendChild(
+        heart
+    );
+
 
     setTimeout(() => {
 
@@ -685,31 +1316,47 @@ function createHeart() {
 }
 
 
-setInterval(createHeart, 700);
+setInterval(
+    createHeart,
+    700
+);
+
 
 
 /* =========================================
    TECLADO
 ========================================= */
 
-document.addEventListener("keydown", function(event) {
 
-    if (event.key === "ArrowRight") {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-        nextPage();
+
+        if (
+            event.key === "ArrowRight"
+        ) {
+
+            nextPage();
+
+        }
+
+
+        if (
+            event.key === "ArrowLeft"
+        ) {
+
+            previousPage();
+
+        }
 
     }
-
-    if (event.key === "ArrowLeft") {
-
-        previousPage();
-
-    }
-
-});
+);
 
 </script>
 
+
 </body>
+
 </html>
 ```
