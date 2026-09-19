@@ -154,7 +154,9 @@ body {
 
     text-align: center;
 
-    padding: 45px;
+    padding: 40px 45px 110px;
+
+    overflow-y: auto;
 
     border-radius: 25px;
 
@@ -325,9 +327,9 @@ h2 {
 
     display: flex;
 
-    gap: 15px;
+    gap: 12px;
 
-    margin: 15px 0 25px;
+    margin: 10px 0 18px;
 
     justify-content: center;
 
@@ -338,9 +340,9 @@ h2 {
 
 .photos img {
 
-    width: 175px;
+    width: 140px;
 
-    height: 210px;
+    height: 170px;
 
     object-fit: cover;
 
@@ -376,9 +378,9 @@ h2 {
 
 .single-photo img {
 
-    width: 280px;
+    width: 220px;
 
-    height: 330px;
+    height: 260px;
 
 }
 
@@ -390,9 +392,9 @@ h2 {
 
 .photo7-container {
 
-    width: 240px;
+    width: 200px;
 
-    height: 280px;
+    height: 235px;
 
     display: flex;
 
@@ -646,14 +648,16 @@ button:hover {
     .page {
 
         padding:
-            35px 20px 70px;
+            30px 18px 95px;
+
+        overflow-y: auto;
 
     }
 
 
     .letter {
 
-        font-size: 16px;
+        font-size: 15.5px;
 
     }
 
@@ -662,34 +666,34 @@ button:hover {
 
         gap: 8px;
 
-        margin-bottom: 15px;
+        margin: 8px 0 12px;
 
     }
 
 
     .photos img {
 
-        width: 105px;
+        width: 88px;
 
-        height: 135px;
+        height: 112px;
 
     }
 
 
     .single-photo img {
 
-        width: 200px;
+        width: 165px;
 
-        height: 250px;
+        height: 205px;
 
     }
 
 
     .photo7-container {
 
-        width: 180px;
+        width: 150px;
 
-        height: 220px;
+        height: 178px;
 
     }
 
@@ -738,14 +742,7 @@ button:hover {
 
     <p class="subtitle">
 
-        Una pequeña historia sobre nosotros
-
-    </p>
-
-
-    <p style="margin-bottom:30px;">
-
-        Para la persona que hizo este año tan especial...
+        Este mi amor es el regalo que estuve trabajando con mucho amor, eres muy especial para mí, espero te guste.
 
     </p>
 
@@ -811,12 +808,9 @@ button:hover {
 
     <p class="letter">
 
-        Todavía recuerdo aquellos primeros momentos,
-        cuando poco a poco comenzamos a conocernos.
-
-        Nunca imaginé que aquella persona que apareció
-        en mi vida terminaría convirtiéndose en alguien
-        tan importante para mí.
+        Todavía recuerdo ese día en que te lleve en mi bicicleta,
+        es como si fuera ayer, o el día que te dije
+        para que seas mi enamorada.
 
     </p>
 
@@ -867,7 +861,7 @@ button:hover {
 
         </span>
 
-        <span class="song-label">Billy Joel – Just The Way You Are</span>
+        <span class="song-label">Belanova – Baila Mi Corazón</span>
 
         <button class="music-toggle" onclick="toggleMusic()" aria-label="Reproducir o pausar música">⏸️</button>
 
@@ -967,7 +961,7 @@ button:hover {
 
         </span>
 
-        <span class="song-label">Taylor Swift – Lover</span>
+        <span class="song-label">Billy Joel – Just The Way You Are</span>
 
         <button class="music-toggle" onclick="toggleMusic()" aria-label="Reproducir o pausar música">⏸️</button>
 
@@ -992,11 +986,9 @@ button:hover {
 
     <p class="letter">
 
-        Hay momentos que se quedan guardados
-        en nuestra memoria para siempre.
-
-        Esta fotografía es uno de esos recuerdos
-        que quiero conservar contigo.
+        Todos los momentos, tanto buenos como malos,
+        los tengo guardados en mi corazón,
+        porque en serio eres tan importante para mi vida.
 
     </p>
 
@@ -1056,7 +1048,7 @@ button:hover {
 
         </span>
 
-        <span class="song-label">Belanova – Baila Mi Corazón</span>
+        <span class="song-label">Billy Joel – Just The Way You Are</span>
 
         <button class="music-toggle" onclick="toggleMusic()" aria-label="Reproducir o pausar música">⏸️</button>
 
@@ -1140,7 +1132,7 @@ button:hover {
 
         </span>
 
-        <span class="song-label">Billy Joel – Just The Way You Are</span>
+        <span class="song-label">Taylor Swift – Lover</span>
 
         <button class="music-toggle" onclick="toggleMusic()" aria-label="Reproducir o pausar música">⏸️</button>
 
@@ -1261,22 +1253,16 @@ button:hover {
 
     <p class="letter">
 
-        Este es solamente el primer capítulo
-        de nuestra historia.
-
-        Espero que podamos seguir llenando
-        muchas páginas juntos, creando recuerdos,
-        viajando, riendo y compartiendo
-        cada vez más momentos.
+        Te amo mucho mi Domi, espero me des luego domivoltios
+        y sentir el calor de tu cuerpo que tanto extraño
+        al despertar.
 
     </p>
 
 
     <p class="signature">
 
-        Con todo mi amor,<br>
-
-        Tu enamorado ❤️
+        Con todo mi corazón, Mati ❤️
 
     </p>
 
@@ -1339,10 +1325,10 @@ const songs = [
 
 
 /* Página 0 = portada (sin música).
-   Páginas 1 a 6 ciclan entre las 3 canciones. */
+   Canción 1: páginas 1-2. Canción 2: páginas 3-4. Canción 3: páginas 5-6. */
 
 const pageSongMap = [
-    null, 0, 1, 2, 0, 1, 2
+    null, 0, 0, 1, 1, 2, 2
 ];
 
 
@@ -1578,4 +1564,3 @@ document.addEventListener(
 </body>
 
 </html>
-```
